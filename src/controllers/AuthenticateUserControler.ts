@@ -4,7 +4,7 @@ import {AuthenticateUserService} from "../services/AuthenticateUserService"
 class AuthenticateUserControler{
     async handle(request : Request,response: Response){
 
-        const { code } = request.body   ;
+        const { code } = request.body;
 
         const service = new AuthenticateUserService();
         try{

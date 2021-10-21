@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { verify} from "jsonwebtoken"
+import { verify } from "jsonwebtoken"
 
 interface IPayload{
     sub : string,
@@ -25,7 +25,7 @@ export function ensureAuthenticated(request: Request, response: Response, next: 
         
     }catch(err){
         return response.status(401).json({
-            errorCode: err
+            errorCode: "Token.Expired"
         })
     }
 }
